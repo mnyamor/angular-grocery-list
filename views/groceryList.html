@@ -4,19 +4,7 @@
     </a>
     <ul class="list-group">
         <li ng-repeat="item in groceryItems |orderBy: '-date'" class="list-group-item text-center clearfix">
-            <a href="#/" class="btn btn-success btn-sm pull-left">
-                <span class="glyphicon glyphicon-unchecked"></span>
-            </a>
-            <span style="font-weight: bold">{{item.itemName | uppercase }}</span>
-
-            <button type="button"  class="btn btn-danger btn-sm pull-right" style="margin: 0 0 0 10px;" ng-click="removeItem(item)">
-                <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-            </button>
-
-            <a href="#/addItem/edit/{{item.id}}" class="btn btn-default btn-sm pull-right">
-                <span class="glyphicon glyphicon-pencil"></span>
-            </a>
-
+            <mn-grocery-item></mn-grocery-item>
         </li>
     </ul>
 </div>

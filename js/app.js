@@ -87,7 +87,12 @@ app.service('GroceryService', function(){
 
     return groceryService;
 });
-
+app.directive('mnGroceryItem', function(){
+    return {
+        restrict:'E',
+        templateUrl:'views/groceryItem.html'
+    };
+});
 app.controller('HomeCtrl', ['$scope', 'GroceryService', function($scope, GroceryService) {
     $scope.groceryItems = GroceryService.groceryItems;
 
