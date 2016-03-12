@@ -72,8 +72,18 @@ app.service('GroceryService', function($http){
     };
 
     groceryService.removeItem = function(entry){
-        var index = groceryService.groceryItems.indexOf(entry);
-        groceryService.groceryItems.splice(index,1);
+        $http.post('js/mockup-data/deleteItem.json',{ id:entry.id })
+            .success(function(data){
+                if(data.status) {
+                    var index = groceryService.groceryItems.indexOf(entry);
+                    groceryService.groceryItems.splice(index,1);
+                }
+            })
+            .error(function(data, status){
+
+            });
+
+
     };
 
     groceryService.markCompleted = function(entry){
