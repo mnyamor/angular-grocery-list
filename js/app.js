@@ -28,11 +28,10 @@ app.service('GroceryService', function(){
 
     //add items to our object
     groceryService.groceryItems = [
-        { id:1, completed:true, itemName:'cookies', date:'2016-03-11'},
-        { id:2, completed:true, itemName:'milk', date:'2016-03-04'},
-        { id:3, completed:true, itemName:'bananas', date:'2016-03-08'},
-        { id:4, completed:true, itemName:'apples', date:'2016-03-10'},
-        { id:5, completed:true, itemName:'chocolate', date:'2016-03-02'}
+        { id:1, completed:true, itemName:'cookies',date: new Date('March 3, 2016, 11:13:00')},
+        { id:3, completed:true, itemName:'bananas', date:new Date('March 12, 2016, 11:13:00')},
+        { id:4, completed:true, itemName:'apples', date: new Date('March 8, 2016, 11:13:00')},
+        { id:5, completed:true, itemName:'chocolate', date: new Date('March 6, 2016, 11:13:00')}
     ];
 
     //Edit
@@ -63,6 +62,10 @@ app.service('GroceryService', function(){
             return groceryService.newId;
         }
     };
+    groceryService.removeItem = function(entry){
+        var index = groceryService.groceryItems.indexOf(entry);
+        groceryService.groceryItems.splice(index,1);
+    };
 
     //save
     groceryService.save = function(entry){
@@ -80,12 +83,17 @@ app.service('GroceryService', function(){
         }
 
     };
+
+
     return groceryService;
 });
 
 app.controller('HomeCtrl', ['$scope', 'GroceryService', function($scope, GroceryService) {
     $scope.groceryItems = GroceryService.groceryItems;
 
+    $scope.removeItem = function(entry){
+        GroceryService.removeItem(entry);
+    };
 }]);
 
 app.controller('GroceryListItemCtrl', ['$scope','$routeParams','$location','GroceryService',
