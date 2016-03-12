@@ -1,0 +1,6 @@
+[
+  { "id":1, "completed":true, "itemName":"cookies",  "date": "March 3, 2016, 11:13:00"},
+  { "id":3, "completed":true, "itemName":"bananas",  "date":"March 12, 2016, 11:13:00"},
+  { "id":4, "completed":true, "itemName":"apples",   "date": "March 8, 2016, 11:13:00"},
+  { "id":5, "completed":true, "itemName":"chocolate","date":"March 6, 2016, 11:13:00"}
+]
