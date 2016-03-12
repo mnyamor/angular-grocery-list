@@ -1,0 +1,11 @@
+.strike{
+    position: relative;
+}
+.strike:before{
+    border-bottom: 3px solid #111;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top:40%;
+}

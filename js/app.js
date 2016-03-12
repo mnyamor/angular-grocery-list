@@ -67,6 +67,9 @@ app.service('GroceryService', function(){
         groceryService.groceryItems.splice(index,1);
     };
 
+    groceryService.markCompleted = function(entry){
+        entry.completed = !entry.completed;
+    };
     //save
     groceryService.save = function(entry){
         //update
@@ -98,6 +101,10 @@ app.controller('HomeCtrl', ['$scope', 'GroceryService', function($scope, Grocery
 
     $scope.removeItem = function(entry){
         GroceryService.removeItem(entry);
+    };
+    $scope.markCompleted = function(entry) {
+        GroceryService.markCompleted(entry);
+
     };
 }]);
 
