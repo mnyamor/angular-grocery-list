@@ -14,7 +14,7 @@ var app = angular.module('groceryListApp', ['ngRoute'])
                 templateUrl:'views/addItem.html',
                 controller:'GroceryListItemCtrl'
             })
-            .when('/addItem/:id', {
+            .when('/addItem/edit/:id', {
                 templateUrl:'views/addItem.html',
                 controller:'GroceryListItemCtrl'
             })
@@ -29,7 +29,8 @@ var app = angular.module('groceryListApp', ['ngRoute'])
 
         var groceryService = [];
 
-        groceryService.groceryItems = [
+        //array list
+         groceryService.groceryItems = [
             { id:1, completed:true, itemName:'cookies', date:'2016-03-11'},
             { id:2, completed:true, itemName:'milk', date:'2016-03-04'},
             { id:3, completed:true, itemName:'bananas', date:'2016-03-08'},
@@ -37,6 +38,7 @@ var app = angular.module('groceryListApp', ['ngRoute'])
             { id:5, completed:true, itemName:'chocolate', date:'2016-03-02'}
         ];
 
+        //fetch
         groceryService.getNewId = function(){
             //if i have a variable named newid
             if(groceryService.newId) {
@@ -56,6 +58,18 @@ var app = angular.module('groceryListApp', ['ngRoute'])
 
         };
 
+        //Edit
+        groceryService.findById = function(id){
+            //pass in id, loop through every entry using a for each loop, and if match,return id
+            for (var item in groceryService.groceryItems) {
+                if (groceryService.groceryItems[item].id === id) {
+                    return groceryService.groceryItems[item];
+                }
+            }
+
+        };
+        console.log(groceryService.findById(4));
+        //save
         groceryService.save = function(entry){
             entry.id = groceryService.getNewId();
             groceryService.groceryItems.push(entry);
@@ -90,5 +104,5 @@ var app = angular.module('groceryListApp', ['ngRoute'])
                 //get value
         $scope.rp = 'Route parameter value:' + ' ' +  $routeParams.id;
             console.log($scope.groceryItems);
-    }])
+    }]);
 
