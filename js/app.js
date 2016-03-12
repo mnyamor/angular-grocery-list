@@ -32,8 +32,8 @@ var app = angular.module('groceryListApp', ['ngRoute'])
             { id:4, completed:true, itemName:'apples', date:'2016-03-10'},
             { id:5, completed:true, itemName:'chocolate', date:'2016-03-02'}
         ];
-        groceryService.save = function(){
-
+        groceryService.save = function(entry){
+            groceryService.groceryItem.push(entry);
         };
         return groceryService;
     })
