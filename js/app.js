@@ -39,8 +39,7 @@ app.service('GroceryService', function($http){
              alert('things went wrong');
          })
 
-
-
+        // $http.get('/someUrl', config).then(successCallback, errorCallback);
 
     //Edit
     groceryService.findById = function(id){
@@ -70,6 +69,7 @@ app.service('GroceryService', function($http){
             return groceryService.newId;
         }
     };
+
     groceryService.removeItem = function(entry){
         var index = groceryService.groceryItems.indexOf(entry);
         groceryService.groceryItems.splice(index,1);
@@ -78,6 +78,7 @@ app.service('GroceryService', function($http){
     groceryService.markCompleted = function(entry){
         entry.completed = !entry.completed;
     };
+
     //save
     groceryService.save = function(entry){
         //update
@@ -89,7 +90,16 @@ app.service('GroceryService', function($http){
             updatedItem.date = entry.date;
 
         } else {
-            entry.id = groceryService.getNewId();
+            $http.post('js/mockup-data/addedItem.json',entry)
+                .success(function(data){
+                    entry.id = data.newId;
+                })
+                .error(function(data, status){
+
+                });
+
+
+            //entry.id = groceryService.getNewId();
             groceryService.groceryItems.push(entry);
         }
 

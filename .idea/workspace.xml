@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdadcd1f-7f2a-4521-ae09-0c827132d5f0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/mockup-data/data.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/mockup-data/addedItem.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -41,11 +41,31 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31355932">
-              <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.33050847">
+              <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="http_github.com_borisyankov_DefinitelyTyped_raw_master_angularjs_angular.d.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Library/Caches/WebStorm10/extLibs/http_github.com_borisyankov_DefinitelyTyped_raw_master_angularjs_angular.d.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1412" column="22" selection-start-line="1412" selection-start-column="22" selection-end-line="1412" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="addedItem.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/mockup-data/addedItem.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.625">
+              <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -132,6 +152,7 @@
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/views/groceryItem.html" />
         <option value="$PROJECT_DIR$/js/mockup-data/data.json" />
+        <option value="$PROJECT_DIR$/js/mockup-data/addedItem.json" />
         <option value="$PROJECT_DIR$/js/app.js" />
       </list>
     </option>
@@ -462,6 +483,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/mockup-data/addedItem.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.625">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/mockup-data/data.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.125">
@@ -470,10 +499,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/WebStorm10/extLibs/http_github.com_borisyankov_DefinitelyTyped_raw_master_angularjs_angular.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1412" column="22" selection-start-line="1412" selection-start-column="22" selection-end-line="1412" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31355932">
-          <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.33050847">
+          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
