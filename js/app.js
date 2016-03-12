@@ -22,6 +22,7 @@ var app = angular.module('groceryListApp', ['ngRoute'])
                 redirectTo:'/'
             })
         })
+
     .service('GroceryService', function(){
         var groceryService = [];
         groceryService.groceryItems = [
