@@ -28,6 +28,7 @@ app.service('GroceryService', function($http){
 
     //add items to our object
     groceryService.groceryItems = [];
+
      $http.get('js/mockup-data/data.json')
          .success(function(data){
              groceryService.groceryItems = data;
@@ -85,9 +86,22 @@ app.service('GroceryService', function($http){
         var updatedItem = groceryService.findById(entry.id);
 
         if (updatedItem) {
-            updatedItem.completed = entry.completed;
+            $http.post('js/mockup-data/updatedItem.json', entry)
+                .success(function (data) {
+                    if(data.status == 1) {
+                        updatedItem.completed = entry.completed;
+                        updatedItem.itemName = entry.itemName;
+                        updatedItem.date = entry.date;
+                    }
+                })
+                .error(function(data, status){
+
+                });
+
+
+            /*updatedItem.completed = entry.completed;
             updatedItem.itemName = entry.itemName;
-            updatedItem.date = entry.date;
+            updatedItem.date = entry.date;*/
 
         } else {
             $http.post('js/mockup-data/addedItem.json',entry)
