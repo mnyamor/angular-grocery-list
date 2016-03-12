@@ -26,22 +26,32 @@ var app = angular.module('groceryListApp', ['ngRoute'])
     .service('GroceryService', function(){
         var groceryService = [];
         groceryService.groceryItems = [
-            { completed:true, itemName:'cookies', date:'2016-03-11'},
-            { completed:true, itemName:'milk', date:'2016-03-04'},
-            { completed:true, itemName:'bananas', date:'2016-03-08'},
-            { completed:true, itemName:'apples', date:'2016-03-10'},
-            { completed:true, itemName:'chocolate', date:'2016-03-02'}
+            { id:1, completed:true, itemName:'cookies', date:'2016-03-11'},
+            { id:2, completed:true, itemName:'milk', date:'2016-03-04'},
+            { id:3, completed:true, itemName:'bananas', date:'2016-03-08'},
+            { id:4, completed:true, itemName:'apples', date:'2016-03-10'},
+            { id:5, completed:true, itemName:'chocolate', date:'2016-03-02'}
         ];
+        groceryService.save = function(){
+
+        };
         return groceryService;
     })
     .controller('HomeCtrl', ['$scope', function($scope){
         $scope.appTitle ='Grocery List';
     }])
 
-    .controller('GroceryListItemCtrl', ['$scope','$routeParams','GroceryService',
-        function($scope, $routeParams,GroceryService) {
+    .controller('GroceryListItemCtrl', ['$scope','$routeParams','$location','GroceryService',
+        function($scope, $routeParams,$location,GroceryService) {
         $scope.groceryItems = GroceryService.groceryItems;
-        //get value
+            //add item
+            $scope.groceryItem = { id:6, completed:true, itemName:'cheese', date:new Date()};
+            $scope.save = function (){
+                GroceryService.save($scope.groceryItem);
+                $location.path('/');
+            };
+
+                //get value
         $scope.rp = 'Route parameter value:' + ' ' +  $routeParams.id;
     }])
 

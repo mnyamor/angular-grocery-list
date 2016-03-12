@@ -6,11 +6,11 @@
     <form name="groceryForm">
 
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Grocery item"/>
+            <input type="text" class="form-control" placeholder="Grocery item" ng-model="groceryItem.itemName"/>
         </div>
         <!--end form-group 1-->
         <div class="form-group">
-            <a href="#/" class="btn btn-success btn-lg btn-block">
+            <a href="#/" class="btn btn-success btn-lg btn-block" ng-click="save()">
                 <span class="glyphicon glyphicon-pushpin"></span> Save
             </a>
         </div>
