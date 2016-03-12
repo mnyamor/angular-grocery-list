@@ -3,6 +3,22 @@
 */
 
 var app = angular.module('groceryListApp', ['ngRoute'])
+
+    .config(function($routeProvider) {
+        $routeProvider
+            .when('/', {
+                template:'views/groceryList.html',
+                controller:'GroceryListItemCtrl'
+            })
+            .when('/addItem', {
+                template:'views/addItem.html',
+                controller:'GroceryListItemCtrl'
+            })
+            .otherwise({
+                redirectTo:'/'
+            })
+        })
+
     .controller('HomeCtrl', ['$scope', function($scope){
         $scope.appTitle ='Grocery List';
     }])
@@ -17,17 +33,3 @@ var app = angular.module('groceryListApp', ['ngRoute'])
         ];
     }])
 
-    .config(function($routeProvider){
-           /* $routeProvider
-                when.('/', {
-                    template:'views/list.html',
-                    controller:'homectrl'
-                })
-                when.('/add', {
-                    template:'views/add.html',
-                    controller:'addGroceryCrl'
-                })
-        otherwise({
-            redirectTo:'/'
-        });*/
-    });

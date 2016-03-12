@@ -17,6 +17,7 @@
         <![endif]-->
     </head>
 <body ng-controller="HomeCtrl">
+    <!--navbar-->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <a class="navbar-brand">
@@ -26,26 +27,8 @@
             </a>
         </div>
     </nav>
-    <div class="container" ng-controller="GroceryListItemCtrl">
-        <div class="col-xs-12">
-            <ul class="list-group">
-                <li ng-repeat="item in groceryItems |orderBy: 'date'" class="list-group-item text-center clearfix">
-                     <span style="font-weight: bold">{{item.itemName}}</span>
-
-                </li>
-                <!--<li class="list-group-item text-center clearfix">
-                    <button type="button" class="btn btn-success btn-sm pull-left">
-                        <span class="glyphicon glyphicon-unchecked"></span>
-                    </button>
-                    <span style="font-weight: bold">Item 1</span>
-                    <button type="button" class="btn btn-default btn-sm pull-right">
-                        <span class="glyphicon glyphicon-pencil"></span>
-                    </button>
-                </li>-->
-            </ul>
-        </div>
-    </div>
-    <div ng-view></div>
+    <!--views-->
+    <div class="container" ng-view></div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="lib/jquery-1.12.1.min.js"></script>
