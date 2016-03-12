@@ -7,11 +7,11 @@ var app = angular.module('groceryListApp', ['ngRoute'])
     .config(function($routeProvider) {
         $routeProvider
             .when('/', {
-                template:'views/groceryList.html',
+                templateUrl:'views/groceryList.html',
                 controller:'GroceryListItemCtrl'
             })
             .when('/addItem', {
-                template:'views/addItem.html',
+                templateUrl:'views/addItem.html',
                 controller:'GroceryListItemCtrl'
             })
             .otherwise({
