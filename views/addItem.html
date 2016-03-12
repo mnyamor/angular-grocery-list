@@ -4,13 +4,21 @@
 
     </div>
     <form name="groceryForm">
+        <div>Dirty: <b>{{groceryForm.$dirty}}</b></div> <!--have we touched our form -->
+        <div>Pristine: <b>{{groceryForm.$pristine}}</b></div><!--have we touched the form whatsover-->
+        <div>Valid: <b>{{groceryForm.$valid}}</b></div><br/><!--valid -->
 
+        <div class="alert alert-danger" role="alert" ng-show="groceryForm.$dirty && !groceryForm.$valid">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only"></span>
+            Enter a valid grocery item
+        </div>
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="Grocery item" ng-model="groceryItem.itemName"/>
+            <input type="text" ng-pattern="/^[a-zA-Z]*$/" class="form-control" placeholder="Grocery item" ng-model="groceryItem.itemName" required/>
         </div>
         <!--end form-group 1-->
         <div class="form-group">
-            <a href="#/" class="btn btn-success btn-lg btn-block" ng-click="save()">
+            <a href="#/" class="btn btn-success btn-lg btn-block" ng-click="groceryForm.$valid && save()">
                 <span class="glyphicon glyphicon-pushpin"></span> Save
             </a>
         </div>
